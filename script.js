@@ -42,8 +42,17 @@ function handleSearchSubmit(event) {
   weatherAppCityElement.innerHTML = searchInput.value;
   searchCity(searchInput.value);
 }
+function getForecast(city){
+    let apiKey = "d059510f0t7f54boed6ea43f3f206f9c";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios(apiUrl).then(displayForecast);
 
-function displayForecast() { 
+}
+
+function displayForecast(response)    
+{ 
+    console.log(response.data);
+
     let forecastElement = document.querySelector("#forecast"); 
     let days = ["Tue", "Wed", "Thu", "Fri", "Sat"]; 
     let forecastHtml = ""; days.forEach(function(day) 
@@ -55,7 +64,9 @@ function displayForecast() {
          <span class="weather-forecast-temperatures-max">18°</span>
           <span class="weather-forecast-temperatures-min">12°</span> </div> </div> </div>`; }); 
           forecastElement.innerHTML = forecastHtml; }
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Pretoria");
-displayForecast()
+
+getForecast("Pretoria")
