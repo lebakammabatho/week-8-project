@@ -89,7 +89,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 56%, rgba(
     margin-top: 20px;
     text-align: center;
     color: black;
-    display: inline;
+    display: flex;
  }
  .weather-forecast-date  {
     font-size: 15px;
@@ -102,5 +102,5 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 56%, rgba(
     opacity: 0.6;
 }
 img {
-    width: 100%;
+    width: 50%;
 }
