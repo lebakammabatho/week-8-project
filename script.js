@@ -43,31 +43,18 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
-
-    let forecast = document.querySelector("#forecast");
-
-    let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-   let forecastHtml = "";
-
-    days.forEach(function(day) {
-        forecastHtml =
-    forecastHtml +
-    `
-<div class="row">
+function displayForecast() { 
+    let forecastElement = document.querySelector("#forecast"); 
+    let days = ["Tue", "Wed", "Thu", "Fri", "Sat"]; 
+    let forecastHtml = ""; days.forEach(function(day) 
+    { forecastHtml += 
+        `<div class="row"> 
         <div class="col-2">
-           <div class="weather-forecast-date">${day}</div> 
-            ☁️
-            <br>
-           <div class="weather-forecast-temperatures"> 
-          <span class="weather-forecast-temperatures-max">18°</span>  
-           <span class="weather-forecast-temperatures-min">12°</span> 
-        </div> 
-        </div>
-    </div>`;
-    });
-    forecastElement.innerHTML = forecastHtml;
-}
+         <div class="weather-forecast-date">${day}</div> 
+         ☁️<br> <div class="weather-forecast-temperatures"> 
+         <span class="weather-forecast-temperatures-max">18°</span>
+          <span class="weather-forecast-temperatures-min">12°</span> </div> </div> </div>`; }); 
+          forecastElement.innerHTML = forecastHtml; }
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Pretoria");
